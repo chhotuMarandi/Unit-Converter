@@ -34,16 +34,35 @@
   justify-content: center;
 }
 
-.screnn_1 {
+.screen_1 {
   background-color: orange;
   width: 340px;
   height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   /* margin-top: 10px; */
 }
 
-.screnn_2 {
+.screen_2 {
   background-color: orange;
   width: 340px;
   height: 140px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+select {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.screen_1_value {
+  background-color: white;
+  padding: 10px;
+  margin: 5px;
+  font-size: 1rem;
 }
