@@ -20,11 +20,13 @@
   width: 380px;
   height: 700px;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
 .screen {
-  margin-top: 10px;
+  /* margin-top: 5px; */
   background-color: blue;
   width: 360px;
   height: 310px;
@@ -65,4 +67,11 @@ select {
   padding: 10px;
   margin: 5px;
   font-size: 1rem;
+}
+
+.buttons {
+  background-color: blue;
+  margin-top: 10px;
+  width: 360px;
+  height: 360px;
 }
