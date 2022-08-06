@@ -83,4 +83,12 @@ select {
   background-color: orange;
   width: 340px;
   height: 340px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.number {
+  background-color: #eee;
+  margin: 5px;
+  font-size: 3.5rem;
 }
