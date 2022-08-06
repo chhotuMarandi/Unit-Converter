@@ -94,6 +94,7 @@ select {
 }
 
 #AC {
+  font-size: 3rem;
   grid-column: 4;
   grid-row: 1/3;
 }
