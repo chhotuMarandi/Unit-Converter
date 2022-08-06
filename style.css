@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: aliceblue;
 }
 
 .main-container {
@@ -20,10 +19,31 @@
   background-color: aliceblue;
   width: 380px;
   height: 700px;
+  display: flex;
+  justify-content: center;
 }
 
-.screen_1 {
+.screen {
+  margin-top: 10px;
   background-color: blue;
-  width: 350px;
-  height: 150px;
+  width: 360px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.screnn_1 {
+  background-color: orange;
+  width: 340px;
+  height: 140px;
+  /* margin-top: 10px; */
+}
+
+.screnn_2 {
+  background-color: orange;
+  width: 340px;
+  height: 140px;
+  margin-top: 10px;
 }
