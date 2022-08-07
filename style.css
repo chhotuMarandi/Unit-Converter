@@ -70,11 +70,12 @@ select {
 } */
 
 #display {
+  background-color: white;
   text-align: right;
   width: 150px;
   font-size: 1rem;
   border: none;
-  padding: 10px;
+  padding: 20px;
   margin: 5px;
 }
 
