@@ -70,6 +70,7 @@ select {
 } */
 
 input {
+  text-align: right;
   width: 150px;
   font-size: 1rem;
   border: none;

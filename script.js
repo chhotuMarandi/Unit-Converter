@@ -7,3 +7,7 @@ for (i = 0; i < buttons.length; i++) {
     input.value = this.id;
   });
 }
+
+const kuchbhi = () => {
+    let inputValue =
+}
