@@ -1,7 +1,12 @@
-function unitValue() {
+const unitValueOne = () => {
   var selectValue = document.getElementById('unit_1').value;
   console.log(selectValue);
-}
+};
+
+const unitValueTwo = () => {
+  var selectValue = document.getElementById('unit_2').value;
+  console.log(selectValue);
+};
 
 // let buttons = Array.from(document.getElementsByClassName('buttons'));
 
