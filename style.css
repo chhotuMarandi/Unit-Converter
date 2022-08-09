@@ -69,7 +69,17 @@ select {
   font-size: 1rem;
 } */
 
-.input {
+#inputOne {
+  background-color: white;
+  text-align: right;
+  width: 150px;
+  font-size: 1rem;
+  border: none;
+  padding: 20px;
+  margin: 5px;
+}
+
+#inputTwo {
   background-color: white;
   text-align: right;
   width: 150px;

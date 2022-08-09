@@ -1,12 +1,42 @@
-const unitValueOne = () => {
-  var selectValue = document.getElementById('unit_1').value;
-  console.log(selectValue);
-};
+let inputOne = document.getElementById('inputOne');
+let inputTwo = document.getElementById('inputTwo');
+let unitOne = document.getElementById('unitOne');
+let unitTwo = document.getElementById('unitTwo');
+let unitOneValue, unitTwoValue;
 
-const unitValueTwo = () => {
-  var selectValue = document.getElementById('unit_2').value;
-  console.log(selectValue);
-};
+//Event Listener
+
+inputOne.addEventListener('keyup', myResult);
+
+function myResult() {
+  inputTwo.value = inputOne.value;
+}
+
+myResult();
+
+// const unitValueOne = () => {
+//   var selectValueOne = document.getElementById('unit_1').value;
+//   console.log(selectValueOne);
+// };
+
+// const unitValueTwo = () => {
+//   var selectValueTwo = document.getElementById('unit_2').value;
+//   console.log(selectValueTwo);
+// };
+
+// var input_1 = document.getElementsByClassName('.input_1').value;
+// var input_2 = document.getElementsByClassName('.input_2').value;
+
+// function feetToInch() {
+//   let feet = this.value;
+//   selectValueOne = feet;
+//   let inch = feet * 12;
+//   selectValueTwo = inch 0`    `
+//   inch.value = inch;
+//   input_2 = inch;
+// }
+
+// feetToInch();
 
 // let buttons = Array.from(document.getElementsByClassName('buttons'));
 
