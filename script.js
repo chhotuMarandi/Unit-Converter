@@ -7,12 +7,23 @@ let unitOneValue, unitTwoValue;
 //Event Listener
 
 inputOne.addEventListener('keyup', myResult);
+unitOne.addEventListener('change', myResult);
+unitTwo.addEventListener('change', myResult);
+
+unitOneValue = unitOne.value;
+unitTwoValue = unitTwo.value;
 
 function myResult() {
-  inputTwo.value = inputOne.value;
-}
+  unitOneValue = unitOne.value;
+  unitTwoValue = unitTwo.value;
 
-myResult();
+  if (unitOneValue === 'inch' && unitTwoValue === 'feet') {
+    inputTwo.value = inputOne.vlaue * 0.0833;
+    console.log(inputTwo);
+  }
+}
+console.log(inputTwo);
+// myResult();
 
 // const unitValueOne = () => {
 //   var selectValueOne = document.getElementById('unit_1').value;
