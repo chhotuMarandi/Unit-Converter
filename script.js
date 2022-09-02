@@ -1,25 +1,13 @@
-const converter = () => {
-  const inputOne = document.getElementById('inputOne').value;
-  // console.log(input);
-  const inputTwo = (document.getElementById('inputTwo').value = inputOne);
-  // console.log(result);
+//selectors
 
-  const selectorOne = document.getElementById('unitOne');
-  const selectedValueOne = selectorOne.value;
-  // console.log(selectedValueOne);
+const unitOne = document.getElementById('unitOne');
+const unitTwo = document.getElementById('unitTwo');
+//inputs
+const inputOne = document.getElementById('inputOne');
+const inputTwo = document.getElementById('inputTwo');
 
-  const selectorTwo = document.getElementById('unitTwo');
-  const selectedValueTwo = selectorTwo.value;
-  console.log(selectedValueTwo);
+//Event Listener
 
-  // const feetToMeter = (f) => {
-  //   let feet = Math.round(f * 0.304);
-  //   return feet;
-  // };
-
-  // if (selectedValueOne == 'feet' && selectedValueTwo == 'meter') {
-  //   inputTwo = feetToMeter(inputOne);
-  // } else if (selectedValueOne == 'inch' && selectedValueTwo == 'feet') {
-  //   inputTwo = inchToFeet(inputOne);
-  // }
-};
+inputOne.addEventListener('input', convertResult);
+unitOne.addEventListener('change', convertResult);
+unitTwo.addEventListener('change', convertResult);
