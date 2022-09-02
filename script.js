@@ -1,25 +1,44 @@
 //selectors
 
-const unitOne = document.getElementById('unitOne');
-const unitTwo = document.getElementById('unitTwo');
+let unitOne = document.getElementById('unitOne');
+let unitTwo = document.getElementById('unitTwo');
 //inputs
-const inputOne = document.getElementById('inputOne');
-const inputTwo = document.getElementById('inputTwo');
+let inputOne = document.getElementById('inputOne');
+let inputTwo = document.getElementById('inputTwo');
 
 //Event Listener
 
-inputOne.addEventListener('input', convertResult);
-unitOne.addEventListener('change', convertResult);
-unitTwo.addEventListener('change', convertResult);
-
-const unitOneValue = unitOne.value;
-const unitTwoValue = unitTwo.value;
+let unitOneValue = unitOne.value;
+let unitTwoValue = unitTwo.value;
 
 const convertResult = () => {
   unitOneValue = unitOne.value;
   unitTwoValue = unitTwo.value;
 
-  //check conditions 
+  //check conditions
+  // let result;
 
-  if(unitOneValue === 'inch')
+  if (unitOneValue === 'inch' && unitTwoValue === 'feet') {
+    inputTwo.value = Math.round(inputOne.value * 0.083);
+  } else if (unitOneValue === 'inch' && unitTwoValue === 'cm') {
+    inputTwo.value = inputOne.value * 2.54;
+  } else if (unitOneValue === 'inch' && unitTwoValue === 'inch') {
+    inputTwo.value = inputOne.value;
+  } else if (unitOneValue === 'feet' && unitTwoValue === 'feet') {
+    inputTwo.value = inputOne.value;
+  } else if (unitOneValue === 'feet' && unitTwoValue === 'cm') {
+    inputTwo.value = inputOne.value * 30.48;
+  } else if (unitOneValue === 'feet' && unitTwoValue === 'inch') {
+    inputTwo.value = inputOne.value * 12;
+  } else if (unitOneValue === 'cm' && unitTwoValue === 'feet') {
+    inputTwo.value = inputOne.value / 30.48;
+  } else if (unitOneValue === 'cm' && unitTwoValue === 'cm') {
+    inputTwo.value = inputOne.value;
+  } else if (unitOneValue === 'cm' && unitTwoValue === 'inch') {
+    inputTwo.value = inputOne.value / 2.54;
+  }
 };
+
+inputOne.addEventListener('keyup', convertResult);
+unitOne.addEventListener('change', convertResult);
+unitTwo.addEventListener('change', convertResult);
