@@ -12,7 +12,7 @@
       <div class="container">
         <div class="screen">
           <div class="screen_1">
-            <select name="unit_1" id="unitOne" onchange="converter()">
+            <select name="unit" id="unitOne" onchange="converter()">
               <!-- <option class="unit_1" value="null">select</option> -->
               <option class="unit_1" value="inch">inch</option>
               <option class="unit_1"  value="feet">feet</option>
@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="screen_2">
-            <select name="unit" id="unitTwo" >
+            <select name="unit" id="unitTwo" onchange="converter()">
               <!-- <option class="unit_1" value="null">select</option> -->
               <!-- <option class="unit_2" value="inch">inch</option> -->
               <option class="unit_2" value="feet">feet</option>
@@ -36,7 +36,7 @@
               <option class="unit_2" value="kilometer">km</option> -->
             </select>
             <div class="input_value">
-              <input type="number"  id="inputTwo">
+              <input type="number"  id="inputTwo" onchange="converter()">
             </div>
           </div>
         </div>
