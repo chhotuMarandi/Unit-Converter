@@ -27,9 +27,9 @@ const convertResult = () => {
   } else if (unitOneValue === 'feet' && unitTwoValue === 'feet') {
     inputTwo.value = inputOne.value;
   } else if (unitOneValue === 'feet' && unitTwoValue === 'cm') {
-    inputTwo.value = inputOne.value * 30.48;
+    inputTwo.value = (inputOne.value * 30.48).toFixed(2);
   } else if (unitOneValue === 'feet' && unitTwoValue === 'inch') {
-    inputTwo.value = inputOne.value * 12;
+    inputTwo.value = (inputOne.value * 12).toFixed(2);
   } else if (unitOneValue === 'cm' && unitTwoValue === 'feet') {
     inputTwo.value = (inputOne.value / 30.48).toFixed(2);
   } else if (unitOneValue === 'cm' && unitTwoValue === 'cm') {
