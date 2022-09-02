@@ -6,8 +6,6 @@ let unitTwo = document.getElementById('unitTwo');
 let inputOne = document.getElementById('inputOne');
 let inputTwo = document.getElementById('inputTwo');
 
-//Event Listener
-
 let unitOneValue = unitOne.value;
 let unitTwoValue = unitTwo.value;
 
@@ -16,7 +14,6 @@ const convertResult = () => {
   unitTwoValue = unitTwo.value;
 
   //check conditions
-  // let result;
 
   if (unitOneValue === 'inch' && unitTwoValue === 'feet') {
     inputTwo.value = inputOne.value * 0.083;
@@ -38,6 +35,8 @@ const convertResult = () => {
     inputTwo.value = (inputOne.value / 2.54).toFixed(2);
   }
 };
+
+//Event Listener
 
 inputOne.addEventListener('keyup', convertResult);
 unitOne.addEventListener('change', convertResult);
