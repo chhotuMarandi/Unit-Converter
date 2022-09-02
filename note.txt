@@ -1,0 +1,14 @@
+Unit Converter
+
+1.Input
+=> nmber
+=> number type by buttons
+
+2. Output
+=> return the result like c to F
+
+3. Data sructure 
+=> number
+
+4. Algorithm
+=>
