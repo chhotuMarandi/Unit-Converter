@@ -19,7 +19,7 @@ const convertResult = () => {
   // let result;
 
   if (unitOneValue === 'inch' && unitTwoValue === 'feet') {
-    inputTwo.value = Math.round(inputOne.value * 0.083);
+    inputTwo.value = inputOne.value * 0.083;
   } else if (unitOneValue === 'inch' && unitTwoValue === 'cm') {
     inputTwo.value = inputOne.value * 2.54;
   } else if (unitOneValue === 'inch' && unitTwoValue === 'inch') {
@@ -31,11 +31,11 @@ const convertResult = () => {
   } else if (unitOneValue === 'feet' && unitTwoValue === 'inch') {
     inputTwo.value = inputOne.value * 12;
   } else if (unitOneValue === 'cm' && unitTwoValue === 'feet') {
-    inputTwo.value = inputOne.value / 30.48;
+    inputTwo.value = (inputOne.value / 30.48).toFixed(2);
   } else if (unitOneValue === 'cm' && unitTwoValue === 'cm') {
     inputTwo.value = inputOne.value;
   } else if (unitOneValue === 'cm' && unitTwoValue === 'inch') {
-    inputTwo.value = inputOne.value / 2.54;
+    inputTwo.value = (inputOne.value / 2.54).toFixed(2);
   }
 };
 
