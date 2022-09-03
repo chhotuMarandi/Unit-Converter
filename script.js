@@ -18,6 +18,7 @@ const btnValue = (e) => {
   if (e.target !== e.currentTarget) {
     let clickedItem = e.target.id;
     console.log(clickedItem);
+    inputOne.value += clickedItem;
   }
 };
 
@@ -29,12 +30,19 @@ const convertResult = () => {
   inputTwoValue = inputTwo.value;
   console.log(inputOneValue);
 
+  // let buttons = btnValue();
+
+  // inputOne = buttons;
+
   // const btnValue = (e) => {
   //   if (e.target !== e.currentTarget) {
   //     let clickedItem = e.target.id;
   //     console.log(clickedItem);
+  //     // inputOneValue = clickedItem.value;
   //   }
   // };
+
+  // keypad.addEventListener('click', btnValue);
 
   //check conditions
 
