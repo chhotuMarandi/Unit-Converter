@@ -71,15 +71,25 @@
 // unitTwo.addEventListener('change', convertResult);
 // keypad.addEventListener('click', btnValue);
 
-let string = '';
+const input = document.getElementById('input');
 
-let buttons = document.querySelectorAll('.buttons');
+const buttons = document.querySelectorAll('.buttons');
 
 Array.from(buttons).forEach((button) => {
   button.addEventListener('click', (e) => {
-    console.log(e.target);
-    string = string + e.target.innerHTML;
-    document.getElementById('input').value = string;
-    console.log(string);
+    const action = button.getAttribute('name');
+    button.addEventListener('click', (e) => {
+      switch (action) {
+        case 'AC':
+          input.value = '';
+          break;
+        case 'AC':
+          input.value = input.substr(0, input.length - 1);
+          break;
+        default:
+          input.value += e.target.innerHTML;
+          break;
+      }
+    });
   });
 });
