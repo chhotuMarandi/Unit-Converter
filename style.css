@@ -119,7 +119,7 @@ select {
   grid-row: 1/3;
 }
 
-#clear {
+#C {
   grid-column: 4;
   grid-row: 3/5;
 }

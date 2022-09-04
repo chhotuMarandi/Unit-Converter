@@ -75,34 +75,69 @@ const input = document.getElementById('input');
 
 const buttons = document.querySelectorAll('.buttons');
 
-buttons.forEach((button) => {
-  const action = button.getAttribute('name');
-  button.addEventListener('click', (e) => {
-    switch (action) {
-      case 'AC':
-        input.value = '';
-        break;
-      case 'X':
-        input = input.substring(0, input.value.length - 1);
-        break;
-      default:
-        input.value += e.target.innerHTML;
-        break;
-    }
-  });
-});
+const buttonHandler = (button) => {
+  switch (button) {
+    case 'AC':
+      input.value = '';
+      break;
+    case 'C':
+      input.value = input.value.substr(0, input.value.length - 1);
+      break;
+    default:
+      input.value += button;
+    // console.log(input);
+  }
+};
+
+// buttons.forEach((button) => {
+//   const action = button.getAttribute('name');
+//   button.addEventListener('click', (e) => {
+//     switch (action) {
+//       case 'AC':
+//         input.value = '';
+//         break;
+//       case 'C':
+//         input.innerHTML = input.innerHTML.substring(
+//           0,
+//           input.innerHTML.length - 1
+//         );
+//         break;
+//       default:
+//         input.value += e.target.innerHTML;
+//         break;
+//     }
+//   });
+// });
+
+// buttons.forEach((button) => {
+//   const action = button.getAttribute('name');
+//   button.addEventListener('click', (e) => {
+//     switch (action) {
+//       case 'AC':
+//         input.value = '';
+//         break;
+//       case 'C':
+//         input.innerHTML = input.innerHTML.substring(
+//           0,
+//           input.innerHTML.length - 1
+//         );
+//         break;
+//       default:
+//         input.value += e.target.innerHTML;
+//         break;
+//     }
+//   });
+// });
 
 // Array.from(buttons).forEach((button) => {
+//   const action = button.getAttribute('name');
 //   button.addEventListener('click', (e) => {
-//     const action = button.getAttribute('name');
-//     button.addEventListener('click', (e) => {
-//       if (action == 'AC') {
-//         input.value = '';
-//       } else if (action == 'X') {
-//         input.value = input.substr(0, input.length - 1);
-//       } else {
-//         input.value += e.target.innerHTML;
-//       }
-//     });
+//     if (action == 'AC') {
+//       input.value = '';
+//     } else if (action == 'X') {
+//       input.innerHTML = input.innerHTML.substr(0, input.innerHTML.length - 1);
+//     } else {
+//       input.value += e.target.innerHTML;
+//     }
 //   });
 // });
