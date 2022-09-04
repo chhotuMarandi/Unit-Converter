@@ -75,21 +75,34 @@ const input = document.getElementById('input');
 
 const buttons = document.querySelectorAll('.buttons');
 
-Array.from(buttons).forEach((button) => {
+buttons.forEach((button) => {
+  const action = button.getAttribute('name');
   button.addEventListener('click', (e) => {
-    const action = button.getAttribute('name');
-    button.addEventListener('click', (e) => {
-      switch (action) {
-        case 'AC':
-          input.value = '';
-          break;
-        case 'AC':
-          input.value = input.substr(0, input.length - 1);
-          break;
-        default:
-          input.value += e.target.innerHTML;
-          break;
-      }
-    });
+    switch (action) {
+      case 'AC':
+        input.value = '';
+        break;
+      case 'X':
+        input = input.substring(0, input.value.length - 1);
+        break;
+      default:
+        input.value += e.target.innerHTML;
+        break;
+    }
   });
 });
+
+// Array.from(buttons).forEach((button) => {
+//   button.addEventListener('click', (e) => {
+//     const action = button.getAttribute('name');
+//     button.addEventListener('click', (e) => {
+//       if (action == 'AC') {
+//         input.value = '';
+//       } else if (action == 'X') {
+//         input.value = input.substr(0, input.length - 1);
+//       } else {
+//         input.value += e.target.innerHTML;
+//       }
+//     });
+//   });
+// });
