@@ -61,9 +61,9 @@
 
 const input = document.getElementById('input');
 
-const inputTwo = document.getElementById('inputTwo');
+const result = document.getElementById('result');
 
-let buttons = document.querySelectorAll('.buttons');
+let keypad = document.querySelectorAll('.buttons');
 
 const unitOne = document.getElementById('unitOne');
 
@@ -73,12 +73,13 @@ let unitOneValue = unitOne.value;
 
 let unitTwoValue = unitTwo.value;
 
-buttons.forEach((btn) => {
+keypad.forEach((btn) => {
   btn.addEventListener('click', () => {
     const clickedBtn = btn.id;
     // console.log(clickedBtn);
     if (clickedBtn == 'AC') {
       input.value = '';
+      result.value = '';
     } else if (clickedBtn == 'C') {
       input.value = input.value.substr(0, input.value.length - 1);
     } else {
@@ -86,31 +87,38 @@ buttons.forEach((btn) => {
     }
 
     // console.log(input.value);
-    unitOneValue = unitOne.value;
-    unitTwoValue = unitTwo.value;
 
-    if (unitOneValue === 'inch' && unitTwoValue === 'feet') {
-      inputTwo.value = (input.value * 0.083).toFixed(2);
-      // console.log(input.value);
-    } else if (unitOneValue === 'inch' && unitTwoValue === 'cm') {
-      inputTwo.value = (input.value * 2.54).toFixed(2);
-    } else if (unitOneValue === 'inch' && unitTwoValue === 'inch') {
-      inputTwo.value = input.value;
-    } else if (unitOneValue === 'feet' && unitTwoValue === 'feet') {
-      inputTwo.value = input.value;
-    } else if (unitOneValue === 'feet' && unitTwoValue === 'cm') {
-      inputTwo.value = (input.value * 30.48).toFixed(2);
-    } else if (unitOneValue === 'feet' && unitTwoValue === 'inch') {
-      inputTwo.value = (input.value * 12).toFixed(2);
-    } else if (unitOneValue === 'cm' && unitTwoValue === 'feet') {
-      inputTwo.value = (input.value / 30.48).toFixed(2);
-    } else if (unitOneValue === 'cm' && unitTwoValue === 'cm') {
-      inputTwo.value = input.value;
-    } else if (unitOneValue === 'cm' && unitTwoValue === 'inch') {
-      inputTwo.value = (input.value / 2.54).toFixed(2);
-    }
+    calculate();
   });
 });
+
+const converter = () => {};
+
+const calculate = () => {
+  unitOneValue = unitOne.value;
+  unitTwoValue = unitTwo.value;
+
+  if (unitOneValue === 'inch' && unitTwoValue === 'feet') {
+    result.value = (input.value * 0.083).toFixed(2);
+    // console.log(input.value);
+  } else if (unitOneValue === 'inch' && unitTwoValue === 'cm') {
+    result.value = (input.value * 2.54).toFixed(2);
+  } else if (unitOneValue === 'inch' && unitTwoValue === 'inch') {
+    result.value = input.value;
+  } else if (unitOneValue === 'feet' && unitTwoValue === 'feet') {
+    result.value = input.value;
+  } else if (unitOneValue === 'feet' && unitTwoValue === 'cm') {
+    result.value = (input.value * 30.48).toFixed(2);
+  } else if (unitOneValue === 'feet' && unitTwoValue === 'inch') {
+    result.value = (input.value * 12).toFixed(2);
+  } else if (unitOneValue === 'cm' && unitTwoValue === 'feet') {
+    result.value = (input.value / 30.48).toFixed(2);
+  } else if (unitOneValue === 'cm' && unitTwoValue === 'cm') {
+    result.value = input.value;
+  } else if (unitOneValue === 'cm' && unitTwoValue === 'inch') {
+    result.value = (input.value / 2.54).toFixed(2);
+  }
+};
 
 // buttons.forEach((btn) => {
 //   btn.addEventListener('click', () => {
@@ -165,9 +173,9 @@ buttons.forEach((btn) => {
 
 //Event Listener
 
-// input.addEventListener('input', buttonHandler);
-// unitOne.addEventListener('change', buttonHandler);
-// unitTwo.addEventListener('change', buttonHandler);
+input.addEventListener('keyup', calculate);
+unitOne.addEventListener('change', calculate);
+unitTwo.addEventListener('change', calculate);
 
 //   if (unitOneValue === 'inch' && unitTwoValue === 'feet') {
 //     inputTwo.value = (input.value * 0.083).toFixed(2);
