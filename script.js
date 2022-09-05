@@ -77,16 +77,19 @@ keypad.forEach((btn) => {
   btn.addEventListener('click', () => {
     const clickedBtn = btn.id;
     // console.log(clickedBtn);
-    if (clickedBtn == 'AC') {
-      input.value = '';
-      result.value = '';
-    } else if (clickedBtn == 'C') {
-      input.value = input.value.substr(0, input.value.length - 1);
-    } else {
-      input.value += clickedBtn;
-    }
 
-    // console.log(input.value);
+    switch (clickedBtn) {
+      case 'AC':
+        input.value = '';
+        result.value = '';
+        break;
+      case 'C':
+        input.value = input.value.substr(0, input.value.length - 1);
+        break;
+      default:
+        input.value += clickedBtn;
+        break;
+    }
 
     calculate();
   });
