@@ -61,6 +61,24 @@ const calculate = () => {
     result.value = input.value;
   } else if (unitOneValue === 'cm' && unitTwoValue === 'inch') {
     result.value = (input.value / 2.54).toFixed(2);
+  } else if (unitOneValue === 'meter' && unitTwoValue === 'km') {
+    result.value = (input.value / 1000).toFixed(4);
+  } else if (unitOneValue === 'meter' && unitTwoValue === 'mile') {
+    result.value = (input.value / 1609.344).toFixed(4);
+  } else if (unitOneValue === 'meter' && unitTwoValue === 'meter') {
+    result.value = input.value;
+  } else if (unitOneValue === 'km' && unitTwoValue === 'meter') {
+    result.value = (input.value * 1000).toFixed(2);
+  } else if (unitOneValue === 'km' && unitTwoValue === 'mile') {
+    result.value = (input.value / 1.609).toFixed(2);
+  } else if (unitOneValue === 'km' && unitTwoValue === 'km') {
+    result.value = input.value;
+  } else if (unitOneValue === 'mile' && unitTwoValue === 'km') {
+    result.value = (input.value * 0.62137).toFixed(2);
+  } else if (unitOneValue === 'mile' && unitTwoValue === 'meter') {
+    result.value = (input.value * 1609.344).toFixed(2);
+  } else if (unitOneValue === 'mile' && unitTwoValue === 'mile') {
+    result.value = input.value;
   }
 };
 
