@@ -63,7 +63,7 @@ const input = document.getElementById('input');
 
 const inputTwo = document.getElementById('inputTwo');
 
-const buttons = document.querySelectorAll('.buttons');
+// const buttons = document.querySelectorAll('.buttons');
 
 const unitOne = document.getElementById('unitOne');
 
@@ -74,25 +74,28 @@ let unitOneValue = unitOne.value;
 let unitTwoValue = unitTwo.value;
 
 const buttonHandler = (button) => {
-  // switch (button) {
-  //   case 'AC':
-  //     input.value = '';
-  //     break;
-  //   case 'C':
-  //     input.value = input.value.substr(0, input.value.length - 1);
-  //     break;
-  //   default:
-  //     input.value += button;
-  //     break;
-  //   // console.log(input);
-  // }
-  console.log(input.value);
+  const buttons = button;
+  console.log(buttons);
+  switch (buttons) {
+    case 'AC':
+      input.value = '';
+      break;
+    case 'C':
+      input.value = input.value.substr(0, input.value.length - 1);
+      break;
+    default:
+      input.value += button;
+      break;
+    // console.log(input);
+  }
+  // console.log(typeof input.value);
 
   unitOneValue = unitOne.value;
   unitTwoValue = unitTwo.value;
 
   if (unitOneValue === 'inch' && unitTwoValue === 'feet') {
     inputTwo.value = (input.value * 0.083).toFixed(2);
+    console.log(typeof inputTwo.value);
   } else if (unitOneValue === 'inch' && unitTwoValue === 'cm') {
     inputTwo.value = (input.value * 2.54).toFixed(2);
   } else if (unitOneValue === 'inch' && unitTwoValue === 'inch') {
@@ -114,7 +117,7 @@ const buttonHandler = (button) => {
 
 //Event Listener
 
-input.addEventListener('input', buttonHandler);
+// input.addEventListener('input', buttonHandler);
 unitOne.addEventListener('change', buttonHandler);
 unitTwo.addEventListener('change', buttonHandler);
 
